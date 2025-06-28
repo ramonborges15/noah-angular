@@ -1,0 +1,17 @@
+// Variables
+@use "variables";
+
+// Global styles for shared components
+// Typography configuration using SCSS variables
+* {
+    font-family: variables.$font-family-primary;
+}
+
+// Override Bootstrap default font family
+:root {
+    --bs-font-sans-serif: #{variables.$font-family-primary};
+}
+
+body {
+    font-family: variables.$font-family-primary !important;
+}

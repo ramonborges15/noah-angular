@@ -1,0 +1,82 @@
+// --- Cores SCSS Variables ---
+// Cores Primárias
+$color-primary-500: #007bff; // Azul principal
+$color-primary-700: #0056b3; // Azul mais escuro
+$color-primary-300: #66b3ff; // Azul mais claro
+
+// Cores Secundárias
+$color-secondary-500: #6c757d; // Cinza principal
+$color-secondary-700: #495057; // Cinza mais escuro
+
+// Cores de Feedback
+$color-success: #28a745; // Verde
+$color-warning: #ffc107; // Amarelo
+$color-danger: #dc3545; // Vermelho
+$color-info: #17a2b8; // Azul claro
+
+// Cores Neutras
+$color-white: #ffffff;
+$color-black: #000000;
+$color-light-gray: #f8f9fa;
+$color-medium-gray: #dee2e6;
+$color-dark-gray: #343a40;
+
+// Cores de Texto
+$color-text-primary: $color-dark-gray;
+$color-text-secondary: $color-secondary-700;
+$color-text-light: $color-white;
+
+// --- Tipografia ---
+// Família de Fontes
+$font-family-primary: "DM Sans", sans-serif;
+$font-family-heading: "DM Sans", sans-serif;
+
+// Pesos de Fonte
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Tamanhos de Fonte
+$font-size-xs: 0.75rem; // 12px
+$font-size-sm: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-lg: 1.125rem; // 18px
+$font-size-xl: 1.25rem; // 20px
+$font-size-2xl: 1.5rem; // 24px
+$font-size-3xl: 1.875rem; // 30px
+$font-size-4xl: 2.25rem; // 36px
+
+// Tamanhos para Headings
+$font-size-h1: 2.5rem; // 40px
+$font-size-h2: 2rem; // 32px
+$font-size-h3: 1.75rem; // 28px
+$font-size-h4: 1.5rem; // 24px
+$font-size-h5: 1.25rem; // 20px
+$font-size-h6: 1rem; // 16px
+
+// Altura da Linha
+$line-height-xs: 2.5;
+$line-height-base: 1.5;
+$line-height-heading: 1.2;
+$line-height-tight: 1.25;
+
+// --- Espaçamento ---
+$spacing-xs: 0.25rem; // 4px
+$spacing-sm: 0.5rem; // 8px
+$spacing-md: 1rem; // 16px
+$spacing-lg: 1.5rem; // 24px
+$spacing-xl: 2rem; // 32px
+$spacing-2xl: 3rem; // 48px
+
+// --- Bordas ---
+$border-radius-sm: 0.25rem; // 4px
+$border-radius-md: 0.5rem; // 8px
+$border-radius-lg: 0.75rem; // 12px
+$border-radius-xl: 1rem; // 16px
+
+// Largura das Bordas
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;

@@ -1,0 +1,70 @@
+<div class="container mt-4">
+  <h1>Demo - Dropdown com Reactive Forms</h1>
+  
+  <div class="mb-4">
+    <h3>Exemplo 1: Dropdown com Reactive Form</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-md-6">
+          <lib-dropdown 
+            [options]="options"
+            label="País"
+            placeholder="Selecione um país"
+            formControlName="country">
+          </lib-dropdown>
+        </div>
+      </div>
+      
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="button" class="btn btn-secondary ms-2" (click)="clearForm()">Limpar</button>
+        <button type="button" class="btn btn-warning ms-2" (click)="loadEditData()">Simular Edição</button>
+      </div>
+    </form>
+    
+    <div class="mt-4">
+      <h5>Valor do Formulário:</h5>
+      <pre>{{ form.value | json }}</pre>
+      
+      <h5>Status do Formulário:</h5>
+      <p>Valid: {{ form.valid }}</p>
+      <p>Touched: {{ form.touched }}</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <h3>Exemplo 2: Dropdown com valor inicial (selectedOption)</h3>
+    <p>Este dropdown já vem com "Brasil" pré-selecionado via input <code>selectedOption</code>:</p>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <lib-dropdown 
+          [options]="options"
+          label="País Favorito"
+          placeholder="Selecione um país"
+          [selectedOption]="'brasil'">
+        </lib-dropdown>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="mb-4">
+    <h3>Exemplo 3: Dropdown desabilitado com valor pré-selecionado</h3>
+    
+    <div class="row">
+      <div class="col-md-6">
+        <lib-dropdown 
+          [options]="options"
+          label="País de Nascimento"
+          placeholder="Selecione um país"
+          [selectedOption]="'canada'"
+          [disabled]="true">
+        </lib-dropdown>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+// Import variables using modern @use
+@use "../../styles/variables" as variables;
+
+label {
+    font-family: variables.$font-family-primary;
+    font-weight: variables.$font-weight-semibold;
+    font-size: variables.$font-size-sm;
+    line-height: variables.$line-height-xs;
+}
+
+.dropdown {
+    font-family: variables.$font-family-primary;
+}
+
+.btn {
+    font-family: variables.$font-family-primary;
+    font-weight: variables.$font-weight-medium;
+    font-size: variables.$font-size-sm;
+    border: variables.$border-width-thin solid variables.$color-medium-gray;
+
+    .select-option-text {
+        color: variables.$color-text-primary;
+    }
+
+    .placeholder-text {
+        color: variables.$color-secondary-500;
+    }
+
+    .material-icons {
+        font-size: variables.$font-size-sm;
+    }
+}
+
+.dropdown-item {
+    font-family: variables.$font-family-primary;
+    font-weight: variables.$font-weight-regular;
+    font-size: variables.$font-size-sm;
+    cursor: pointer;
+}
