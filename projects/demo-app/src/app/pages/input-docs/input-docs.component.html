@@ -1,0 +1,86 @@
+<div class="container mt-4">
+    <h1>Input Component</h1>
+
+    <section class="mb-5">
+        <p>O componente Input é um campo de entrada customizado que implementa Reactive Forms e Bootstrap styling com
+            tipografia Poppins.</p>
+    </section>
+
+    <div class="mb-4">
+        <h3>Exemplo 1: Formulário utilizando vários tipos de input.</h3>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-md-6">
+                    <lib-input type="text" label="Nome de Usuário" placeholder="Digite seu nome de usuário"
+                        [customErrorMessages]="customErrorMessages" formControlName="name">
+                    </lib-input>
+
+                    <lib-input label="Email" placeholder="Digite seu email" type="email" formControlName="email">
+                    </lib-input>
+
+                    <lib-input label="Data de Nascimento" placeholder="Selecione sua data de nascimento" type="date"
+                        formControlName="dateOfBirth">
+                    </lib-input>
+
+                    <lib-input label="Telefone" placeholder="(XX) XXXXX-XXXX" type="text" formControlName="phoneNumber">
+                    </lib-input>
+
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                        <button type="submit" class="btn btn-secondary ms-2" (click)="clearForm()">Limpar</button>
+                        <button type="submit" class="btn btn-warning ms-2" (click)="loadEditData()">Simular
+                            Edição</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="mt-4">
+            <h5>Valor do Formulário:</h5>
+            <pre>{{ form.value | json }}</pre>
+
+            <h5>Status do Formulário:</h5>
+            <p>Valid: {{ form.valid }}</p>
+            <p>Touched: {{ form.touched }}</p>
+
+            <h5>Código typescript</h5>
+            <pre class="bg-light p-3 rounded"><code>{{ formSnippet }}</code></pre>
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><code>label</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'Nome do campo'</code></td>
+                    <td>Rótulo do campo de entrada</td>
+                </tr>
+                <tr>
+                    <td><code>placeholder</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'Digite aqui...'</code></td>
+                    <td>Texto de espaço reservado quando o campo está vazio</td>
+                </tr>
+                <tr>
+                    <td><code>type</code></td>
+                    <td><code>'text' | 'number' | 'date' | 'email' | 'password'</code></td>
+                    <td><code>'text'</code></td>
+                    <td>Tipo do campo de entrada</td>
+                </tr>
+                <tr>
+                    <td><code>customErrorMessages</code></td>
+                    <td>
+                        <pre>{{ customErrorMessages | json }}</pre>
+                    </td>
+                    <td><code></code></td>
+                    <td>Mensagens de erro customizadas para validação do campo</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>

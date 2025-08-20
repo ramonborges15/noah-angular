@@ -1,0 +1,19 @@
+<div class="form-group">
+
+  <label>{{ label }}
+    <span class="required-asterisk" *ngIf="showRequiredAsterisk">*</span>
+  </label>
+
+  <div class="input-container" [class.focused]="isFocused" [class.has-value]="hasValue()" [class.disabled]="isDisabled"
+    [class.error]="showError">
+
+    <input [type]="type" [placeholder]="placeholder" [value]="value || ''" [disabled]="isDisabled"
+      [required]="isRequired" (input)="onInput($event)" (focus)="onFocus()" (blur)="onBlur()"
+      [ngClass]="{'error': showError}" />
+  </div>
+
+  <small class="form-text error" *ngIf="showError">
+    {{ errorMessage }}
+  </small>
+
+</div>

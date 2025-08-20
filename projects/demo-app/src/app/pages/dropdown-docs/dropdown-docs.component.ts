@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { DropdownComponent } from '../../../../../shared-components/src/public-api';
 
 @Component({
-    selector: 'app-dropdown-docs',
-    imports: [DropdownComponent],
-    template: `
+  selector: 'app-dropdown-docs',
+  imports: [DropdownComponent],
+  template: `
     <div class="container-fluid">
       <h1>Dropdown Component</h1>
       
@@ -94,14 +94,14 @@ import { DropdownComponent } from '../../../../../shared-components/src/public-a
   `
 })
 export class DropdownDocsComponent {
-    basicOptions = [
-        { value: 'brasil', label: 'Brasil' },
-        { value: 'eua', label: 'Estados Unidos' },
-        { value: 'canada', label: 'Canadá' },
-        { value: 'argentina', label: 'Argentina' }
-    ];
+  basicOptions = [
+    { value: 'brasil', label: 'Brasil' },
+    { value: 'eua', label: 'Estados Unidos' },
+    { value: 'canada', label: 'Canadá' },
+    { value: 'argentina', label: 'Argentina' }
+  ];
 
-    exampleCode = `// No TypeScript
+  exampleCode = `// No TypeScript
 public options = [
   { value: 'brasil', label: 'Brasil' },
   { value: 'eua', label: 'Estados Unidos' }

@@ -41,9 +41,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
           </li>
           
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link text-muted disabled">
+            <a routerLink="/input" 
+               routerLinkActive="active" 
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
               <i class="material-icons me-2" style="vertical-align: bottom;">input</i>
-              Input (Em breve)
+              Input
             </a>
           </li>
           

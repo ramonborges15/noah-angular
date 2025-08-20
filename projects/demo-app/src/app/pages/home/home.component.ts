@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
-    selector: 'app-home',
-    imports: [RouterLink],
-    template: `
+  selector: 'app-home',
+  imports: [RouterLink],
+  template: `
     <div class="container-fluid">
       <div class="jumbotron bg-primary text-white p-5 rounded mb-4">
         <h1 class="display-4">Noah Angular Components</h1>
@@ -30,10 +30,10 @@ import { RouterLink } from '@angular/router';
             <div class="card-body">
               <h5 class="card-title">
                 <i class="material-icons me-2">input</i>
-                Input (Em breve)
+                Input
               </h5>
               <p class="card-text">Componente de input customizado com validações e styling consistente.</p>
-              <a href="#" class="btn btn-secondary disabled">Em desenvolvimento</a>
+              <a routerLink="/input" class="btn btn-primary">Ver Documentação</a>
             </div>
           </div>
         </div>

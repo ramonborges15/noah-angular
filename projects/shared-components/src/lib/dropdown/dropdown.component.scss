@@ -17,6 +17,7 @@ label {
     font-weight: variables.$font-weight-medium;
     font-size: variables.$font-size-sm;
     border: variables.$border-width-thin solid variables.$color-medium-gray;
+    background-color: variables.$color-white;
 
     .select-option-text {
         color: variables.$color-text-primary;
