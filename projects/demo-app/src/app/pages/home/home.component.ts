@@ -43,10 +43,10 @@ import { RouterLink } from '@angular/router';
             <div class="card-body">
               <h5 class="card-title">
                 <i class="material-icons me-2">smart_button</i>
-                Button (Em breve)
+                Button
               </h5>
               <p class="card-text">Componente de botão com diferentes variações e estados.</p>
-              <a href="#" class="btn btn-secondary disabled">Em desenvolvimento</a>
+              <a routerLink="/button" class="btn btn-primary">Ver Documentação</a>
             </div>
           </div>
         </div>

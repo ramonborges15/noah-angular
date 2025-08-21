@@ -3,6 +3,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { DropdownDocsComponent } from './pages/dropdown-docs/dropdown-docs.component';
 import { InputDocsComponent } from './pages/input-docs/input-docs.component';
+import { ButtonDocsComponent } from './pages/button-docs/button-docs.component';
 
 export const routes: Routes = [
     {
@@ -12,7 +13,8 @@ export const routes: Routes = [
             { path: '', redirectTo: '/home', pathMatch: 'full' },
             { path: 'home', component: HomeComponent },
             { path: 'dropdown', component: DropdownDocsComponent },
-            { path: 'input', component: InputDocsComponent }
+            { path: 'input', component: InputDocsComponent },
+            { path: 'button', component: ButtonDocsComponent }
         ]
     }
 ];

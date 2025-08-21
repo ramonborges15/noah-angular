@@ -1,0 +1,7 @@
+<button type="button" class="btn" [style.background-color]="backgroundColor" [style.color]="color"
+    [style.border-color]="borderColor" [style.min-width]="minWidth" [disabled]="disabled || loading"
+    (click)="onClick()">
+    <span *ngIf="loading" class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+    <span *ngIf="!loading">{{title}}</span>
+    <span *ngIf="loading">{{loadingText}}</span>
+</button>

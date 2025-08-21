@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
-    selector: 'app-layout',
-    imports: [RouterLink, RouterLinkActive, RouterOutlet],
-    template: `
+  selector: 'app-layout',
+  imports: [RouterLink, RouterLinkActive, RouterOutlet],
+  template: `
     <div class="d-flex">
       <!-- Sidebar -->
       <nav class="sidebar bg-dark text-white p-3" [class.sidebar-open]="sidebarOpen">
@@ -49,6 +49,16 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
               Input
             </a>
           </li>
+
+          <li class="nav-item mb-2">
+            <a routerLink="/button" 
+               routerLinkActive="active" 
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">smart_button</i>
+              Button
+            </a>
+          </li>
           
           <li class="nav-item mb-2">
             <a href="#" class="nav-link text-muted disabled">
@@ -81,7 +91,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
       </main>
     </div>
   `,
-    styles: [`
+  styles: [`
     .sidebar {
       width: 280px;
       min-height: 100vh;
@@ -148,20 +158,20 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   `]
 })
 export class LayoutComponent {
-    sidebarOpen = false;
+  sidebarOpen = false;
 
-    toggleSidebar() {
-        this.sidebarOpen = !this.sidebarOpen;
-    }
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
 
-    closeSidebar() {
-        this.sidebarOpen = false;
-    }
+  closeSidebar() {
+    this.sidebarOpen = false;
+  }
 
-    closeSidebarOnMobile() {
-        // Fecha sidebar apenas em mobile
-        if (window.innerWidth < 768) {
-            this.closeSidebar();
-        }
+  closeSidebarOnMobile() {
+    // Fecha sidebar apenas em mobile
+    if (window.innerWidth < 768) {
+      this.closeSidebar();
     }
+  }
 }

@@ -1,0 +1,82 @@
+<div class="container mt-4">
+    <h1>Button Component</h1>
+    <section class="mb-5">
+        <p>O componente Button é utilizado para criar botões estilizados com Bootstrap e tipografia Poppins.</p>
+    </section>
+
+    <div class="mb-4">
+
+        <div class="row gy-4">
+            <div class="col-md-12">
+                <p>Este é um exemplo de botão desabilitado. O atributo <code>[disabled]=" true"</code> faz com que o
+                    botão fique inativo, impedindo qualquer interação do usuário.</p>
+                <lib-button title="Desabilitado" backgroundColor="#660ea5" borderColor="#660ea5"
+                    [disabled]="true"></lib-button>
+            </div>
+
+            <div class="col-md-12">
+                <p>Este é um exemplo de botão habilitado. O botão pode ser clicado e executará a ação associada.</p>
+                <lib-button title="Habilitado" backgroundColor="#660ea5" borderColor="#660ea5"
+                    (onClickEvent)="clicouNoBotao()" [loading]="loading"></lib-button>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><code>title</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'Título do botão'</code></td>
+                    <td>Título exibido no botão</td>
+                </tr>
+                <tr>
+                    <td><code>color</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'#ffffff'</code></td>
+                    <td>Cor do texto do botão</td>
+                </tr>
+                <tr>
+                    <td><code>backgroundColor</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'#660ea5'</code></td>
+                    <td>Cor de fundo do botão</td>
+                </tr>
+                <tr>
+                    <td><code>borderColor</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'#660ea5'</code></td>
+                    <td>Cor da borda do botão</td>
+                </tr>
+                <tr>
+                    <td><code>minWidth</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'100px'</code></td>
+                    <td>Largura mínima do botão</td>
+                </tr>
+                <tr>
+                    <td><code>disabled</code></td>
+                    <td><code>boolean</code></td>
+                    <td><code>false</code></td>
+                    <td>Indica se o botão está desabilitado</td>
+                </tr>
+                <tr>
+                    <td><code>loading</code></td>
+                    <td><code>boolean</code></td>
+                    <td><code>false</code></td>
+                    <td>Indica se o botão está em estado de carregamento</td>
+                </tr>
+                <tr>
+                    <td><code>loadingText</code></td>
+                    <td><code>string</code></td>
+                    <td><code>'Carregando...'</code></td>
+                    <td>Texto exibido quando o botão está em estado de carregamento</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
