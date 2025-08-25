@@ -59,6 +59,16 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
               Button
             </a>
           </li>
+
+          <li class="nav-item mb-2">
+            <a routerLink="/table" 
+               routerLinkActive="active" 
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">table_chart</i>
+              Tabela
+            </a>
+          </li>
           
           <li class="nav-item mb-2">
             <a href="#" class="nav-link text-muted disabled">

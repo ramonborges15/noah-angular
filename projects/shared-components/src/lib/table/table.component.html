@@ -1,0 +1,72 @@
+<table class="table">
+    <thead class="table-light">
+        <tr>
+            <ng-container *ngFor="let col of columns">
+                <th [style.width]="col.width || null">
+                    {{ col.title }}
+                </th>
+            </ng-container>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of data">
+            <ng-container *ngFor="let col of columns">
+                <td class="align-middle">
+                    <ng-container *ngIf="!col.actions" [ngSwitch]="columnTypes[col.prop]">
+                        <ng-container *ngSwitchCase="'date'">{{ row[col.prop] | date:'dd/MM/yyyy' }}</ng-container>
+                        <ng-container *ngSwitchCase="'time'">{{ row[col.prop] | date:'HH:mm' }}</ng-container>
+                        <ng-container *ngSwitchCase="'tag'">
+                            <span class="badge rounded-pill" [ngClass]="row[col.prop + 'Class'] || 'text-bg-dark'">{{
+                                row[col.prop] }}</span>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>{{ row[col.prop] }}</ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="col.actions">
+                        <div class="dropdown">
+                            <button class="btn btn-light btn-sm" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="material-icons align-middle">more_horiz</i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let action of col.actions">
+                                    <a class="dropdown-item" href="#"
+                                        (click)="action.callback(row); $event.preventDefault()">
+                                        <i *ngIf="action.icon" class="material-icons align-middle me-2">{{ action.icon
+                                            }}</i>
+                                        {{ action.title }}
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </ng-container>
+                </td>
+            </ng-container>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Paginator -->
+<nav aria-label="Tabela paginação" class="d-flex justify-content-between mt-3">
+    <lib-dropdown [options]="pageSizeOptions" placeholder="Tamanho da página" [selectedOption]="pageSize"
+        [hideLabel]="true" (valueChange)="onPageSizeChange($event)"></lib-dropdown>
+
+    <ul *ngIf="totalPages > 1" class="pagination pagination-sm">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+            <button class="page-link" (click)="goToPage(currentPage - 1)" [disabled]="currentPage === 1">
+                <i class="material-icons align-middle">chevron_left</i>
+            </button>
+        </li>
+        <ng-container *ngFor="let page of getPages()">
+            <li class="page-item" *ngIf="page !== '...'" [class.active]="page === currentPage">
+                <button class="page-link" (click)="goToPage(toNumber(page))" [disabled]="page === currentPage">{{ page
+                    }}</button>
+            </li>
+            <li class="page-item disabled" *ngIf="page === '...'"><span class="page-link">...</span></li>
+        </ng-container>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <button class="page-link" (click)="goToPage(currentPage + 1)" [disabled]="currentPage === totalPages">
+                <i class="material-icons align-middle">chevron_right</i>
+            </button>
+        </li>
+    </ul>
+</nav>

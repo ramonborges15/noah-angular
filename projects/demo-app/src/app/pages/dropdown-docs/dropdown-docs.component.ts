@@ -82,6 +82,20 @@ import { DropdownComponent } from '../../../../../shared-components/src/public-a
               <td><code>false</code></td>
               <td>Se verdadeiro, desabilita o dropdown</td>
             </tr>
+
+            <tr>
+              <td><code>hideLabel</code></td>
+              <td><code>boolean</code></td>
+              <td><code>false</code></td>
+              <td>Se verdadeiro, esconde a label do dropdown</td>
+            </tr>
+
+            <tr>
+              <td><code>valueChange</code></td>
+              <td><code>EventEmitter&lt;any&gt;</code></td>
+              <td><code>-</code></td>
+              <td>Evento emitido quando o valor selecionado muda. Ele é opicional.</td>
+            </tr>
           </tbody>
         </table>
       </section>

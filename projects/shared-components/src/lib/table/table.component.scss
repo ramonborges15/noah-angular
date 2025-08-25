@@ -1,0 +1,46 @@
+// Import variables
+@use "../../styles/variables" as variables;
+
+thead {
+    border-top: 1px solid #c6c7c8;
+
+    th {
+        font-family: variables.$font-family-primary;
+        font-weight: variables.$font-weight-semibold;
+        font-size: variables.$font-size-sm;
+    }
+}
+
+tbody {
+    th,
+    td {
+        font-family: variables.$font-family-primary;
+        font-weight: variables.$font-weight-regular;
+        font-size: variables.$font-size-sm;
+    }
+
+    .dropdown-menu {
+        font-family: variables.$font-family-primary;
+        font-weight: variables.$font-weight-regular;
+        font-size: variables.$font-size-sm;
+    }
+}
+
+.pagination {
+    i {
+        font-size: 20px;
+    }
+
+    .page-item {
+        .page-link {
+            color: variables.$color-black-700;
+            background-color: variables.$color-white;
+        }
+
+        &.active .page-link {
+            color: variables.$color-white;
+            background-color: variables.$color-black-700;
+            border-color: variables.$color-black-700;
+        }
+    }
+}

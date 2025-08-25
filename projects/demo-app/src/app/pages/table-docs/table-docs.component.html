@@ -1,0 +1,94 @@
+<div class="container mt-4">
+    <h1>Table Component</h1>
+
+    <section class="mb-5">
+        <p>O componente Table é utilizado para exibir dados tabulares com suporte a ordenação, paginação e seleção de
+            linhas.</p>
+    </section>
+
+    <div class="mb-4">
+        <h3>Exemplo 1: Tabela dinâmica com colunas, tipos e ações.</h3>
+        <lib-table [columns]="columns" [data]="data" [columnTypes]="columnTypes" [page]="page" [pageSize]="pageSize"
+            [totalItems]="totalItems" (pageChange)="onPageChange($event)"
+            (pageSizeChange)="onPageSizeChange($event)"></lib-table>
+    </div>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Propriedade</th>
+                    <th>Tipo</th>
+                    <th>Obrigatório?</th>
+                    <th>Descrição</th>
+                    <th>Exemplo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>columns</code></td>
+                    <td><code>TableColumn[]</code></td>
+                    <td>Sim</td>
+                    <td>Array de objetos que define as colunas da tabela. Cada coluna pode ter título, propriedade,
+                        largura, ordenação e ações.</td>
+                    <td>
+                        <pre><code>{{columnsSnippet}}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>data</code></td>
+                    <td><code>any[]</code></td>
+                    <td>Sim</td>
+                    <td>Array de objetos que representa as linhas da tabela. As chaves devem corresponder ao
+                        <code>prop</code> das colunas.
+                    </td>
+                    <td>
+                        <pre><code>{{dataSnippet}}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>columnTypes</code></td>
+                    <td><code>{{columnTypesSnippet}}</code></td>
+                    <td>Não</td>
+                    <td>Define o tipo de exibição para cada coluna. Use <code>tag</code> para badges, <code>date</code>
+                        para datas, <code>time</code> para horas.</td>
+                    <td>
+                        <pre><code>{{columnTypesExampleSnippet}}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>statusClass</code> <br> (ou <code>&lt;prop&gt;Class</code>)</td>
+                    <td><code>string</code></td>
+                    <td>Não</td>
+                    <td>Permite customizar a cor da badge para colunas do tipo <code>tag</code>. Use classes Bootstrap:
+                        <code>text-bg-primary</code>, <code>text-bg-success</code>, etc.
+                    </td>
+                    <td>
+                        <pre><code>{{statusClassSnippet}}</code></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td><code>actions</code></td>
+                    <td><code>TableAction[]</code></td>
+                    <td>Não</td>
+                    <td>Define ações para a coluna. Cada ação pode ter <code>title</code>, <code>icon</code> (Material
+                        Icons) e <code>callback</code> (função chamada ao clicar).</td>
+                    <td>
+                        <pre><code>{{actionsSnippet}}</code></pre>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>Dicas de uso</h3>
+        <ul>
+            <li>Para badges coloridas, defina <code>&lt;prop&gt;Class</code> no seu objeto de dados, exemplo:
+                <code>statusClass: 'text-bg-success'</code>.
+            </li>
+            <li>Para datas, envie um objeto <code>Date</code> ou string compatível e defina <code>columnTypes</code>
+                como <code>date</code>.</li>
+            <li>Para ações, defina a coluna <code>actions</code> e passe um array de ações com callback.</li>
+            <li>Ícones das ações usam Material Icons.</li>
+        </ul>
+    </section>
+</div>

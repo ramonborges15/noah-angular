@@ -1,10 +1,7 @@
-<label for="">{{label}}</label>
+<label *ngIf="!hideLabel" for="">{{label}}</label>
 <div class="dropdown" tabindex="0" (blur)="isOpen = false">
-    <button class="btn btn-light w-100 text-start d-flex justify-content-between align-items-center"
-        type="button"
-        (click)="toggleDropdown()"
-        [attr.aria-expanded]="isOpen"
-        [disabled]="disabled">
+    <button class="btn btn-light w-100 text-start d-flex justify-content-between align-items-center" type="button"
+        (click)="toggleDropdown()" [attr.aria-expanded]="isOpen" [disabled]="disabled">
         <span class="select-option-text" *ngIf="hasValue()">{{ getSelectedLabel() }}</span>
         <span class="placeholder-text" *ngIf="!hasValue()">{{ getSelectedLabel() }}</span>
         <span class="material-icons">

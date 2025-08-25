@@ -1,0 +1,7 @@
+@use "../../styles/variables" as variables;
+
+span {
+    font-family: variables.$font-family-primary;
+    font-weight: variables.$font-weight-regular;
+    font-size: variables.$font-size-sm;
+}

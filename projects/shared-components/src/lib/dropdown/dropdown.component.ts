@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, forwardRef, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, forwardRef, OnChanges, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -24,6 +24,9 @@ export class DropdownComponent implements OnInit, OnChanges, ControlValueAccesso
   @Input() public required: boolean = false;
   @Input() public errorMessage: string = 'Campo obrigatório';
   @Input() public selectedOption: any = null;
+  @Input() public hideLabel: boolean = false;
+
+  @Output() valueChange = new EventEmitter<any>();
 
   private internalValue: any = null;
   public isOpen: boolean = false;
@@ -56,6 +59,7 @@ export class DropdownComponent implements OnInit, OnChanges, ControlValueAccesso
     this.isOpen = false;
     this.onChange(option.value);
     this.onTouched();
+    this.valueChange.emit(option.value);
   }
 
   public toggleDropdown(): void {
@@ -82,6 +86,7 @@ export class DropdownComponent implements OnInit, OnChanges, ControlValueAccesso
   // ControlValueAccessor methods
   writeValue(value: any): void {
     this.internalValue = value;
+    this.valueChange.emit(value);
   }
 
   registerOnChange(fn: (value: any) => void): void {
