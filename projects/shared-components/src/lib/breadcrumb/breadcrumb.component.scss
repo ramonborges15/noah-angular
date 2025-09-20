@@ -1,0 +1,51 @@
+@use "../../styles/variables" as variables;
+
+.breadcrumb {
+    font-family: variables.$font-family-primary;
+    background: none;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    font-size: variables.$font-size-sm;
+    color: variables.$color-secondary-700;
+    font-weight: 500;
+}
+
+.breadcrumb-item a {
+    color: variables.$color-black-700;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    transition:
+        background 0.2s,
+        color 0.2s;
+
+    &:hover {
+        background: variables.$color-medium-gray;
+        color: variables.$color-dark-gray;
+        text-decoration: underline;
+    }
+}
+
+.breadcrumb-separator {
+    margin: 0 0.25rem;
+    color: variables.$color-secondary-300;
+    font-size: 1rem;
+}
+
+.breadcrumb-item:last-child {
+    color: variables.$color-secondary-500;
+    font-weight: 400;
+}

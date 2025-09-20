@@ -69,6 +69,16 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
               Tabela
             </a>
           </li>
+
+          <li class="nav-item mb-2">
+            <a routerLink="/breadcrumb"
+               routerLinkActive="active"
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">chevron_right</i>
+              Breadcrumb
+            </a>
+          </li>
           
           <li class="nav-item mb-2">
             <a href="#" class="nav-link text-muted disabled">

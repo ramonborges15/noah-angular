@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h1>Breadcrumb Component</h1>
+    <section class="mb-5">
+        <p>O componente Breadcrumb é utilizado para exibir a navegação hierárquica do usuário dentro da aplicação,
+            permitindo fácil retorno a páginas anteriores.</p>
+    </section>
+
+    <div class="mb-4">
+        <div class="row gy-4">
+            <div class="col-md-12">
+                <p>Este é um exemplo de breadcrumb simples com três níveis de navegação. O usuário pode clicar em "Home"
+                    ou
+                    "Seção" para navegar para essas páginas, enquanto "Página Atual" indica a página em que o usuário
+                    está atualmente.</p>
+                <lib-breadcrumb [items]="breadcrumbItems"></lib-breadcrumb>
+            </div>
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><code>items</code></td>
+                    <td><code>Array&lt;{{ '{' }} label: string, url?: string {{ '}' }}&gt;</code>
+                    </td>
+                    <td><code>[]</code></td>
+                    <td>Array de objetos que define os itens do breadcrumb. Cada item deve ter um rótulo e pode ter uma
+                        URL opcional para navegação.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</div>

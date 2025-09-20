@@ -63,6 +63,20 @@ import { RouterLink } from '@angular/router';
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="material-icons me-2">chevron_right</i>
+                Breadcrumb
+              </h5>
+              <p class="card-text">Componente de navegação Breadcrumb para indicar o caminho atual e facilitar a navegação entre páginas.</p>
+              <a routerLink="/breadcrumb" class="btn btn-primary">Ver Documentação</a>
+            </div>
+          </div>
+        </div>
+        
       </div>
 
       <section class="mt-5">
