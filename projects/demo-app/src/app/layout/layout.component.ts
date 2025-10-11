@@ -81,9 +81,22 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
           </li>
           
           <li class="nav-item mb-2">
-            <a href="#" class="nav-link text-muted disabled">
-              <i class="material-icons me-2" style="vertical-align: bottom;">smart_button</i>
-              Button (Em breve)
+            <a routerLink="/checkbox"
+               routerLinkActive="active"
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">check_box</i>
+              Checkbox
+            </a>
+          </li>
+          
+          <li class="nav-item mb-2">
+            <a routerLink="/toggle"
+               routerLinkActive="active"
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">toggle_on</i>
+              Toggle
             </a>
           </li>
         </ul>

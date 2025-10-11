@@ -6,6 +6,8 @@ import { InputDocsComponent } from './pages/input-docs/input-docs.component';
 import { ButtonDocsComponent } from './pages/button-docs/button-docs.component';
 import { TableDocsComponent } from './pages/table-docs/table-docs.component';
 import { BreadcrumbDocsComponent } from './pages/breadcrumb-docs/breadcrumb-docs.component';
+import { CheckboxDocsComponent } from './pages/checkbox-docs/checkbox-docs.component';
+import { ToggleDocsComponent } from './pages/toggle/toggle-docs.component';
 
 export const routes: Routes = [
     {
@@ -18,7 +20,9 @@ export const routes: Routes = [
             { path: 'input', component: InputDocsComponent },
             { path: 'table', component: TableDocsComponent },
             { path: 'button', component: ButtonDocsComponent },
-            { path: 'breadcrumb', component: BreadcrumbDocsComponent }
+            { path: 'breadcrumb', component: BreadcrumbDocsComponent },
+            { path: 'checkbox', component: CheckboxDocsComponent },
+            { path: 'toggle', component: ToggleDocsComponent }
         ]
     }
 ];

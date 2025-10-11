@@ -1,0 +1,58 @@
+<div class="container mt-4">
+    <h1>Toggle Component</h1>
+    <section class="mb-5">
+        <p>O componente Toggle é utilizado para criar um switch estilizado com Bootstrap, integrando com Reactive Forms.
+        </p>
+    </section>
+
+    <form [formGroup]="form">
+        <div class="mb-4">
+            <!-- Exemplo 1: Toggle simples -->
+            <div class="mb-3">
+                <h5>Toggle simples</h5>
+                <lib-toggle formControlName="toggle1"></lib-toggle>
+                <div class="mt-2">Valor: {{ toggle1Control.value }}</div>
+            </div>
+
+            <!-- Exemplo 2: Toggle iniciado ativado -->
+            <div class="mb-3">
+                <h5>Toggle iniciado ativado</h5>
+                <lib-toggle formControlName="toggle2"></lib-toggle>
+                <div class="mt-2">Valor: {{ toggle2Control.value }}</div>
+            </div>
+
+            <!-- Exemplo 3: Toggle com título e filtro -->
+            <div class="mb-3">
+                <h5>Toggle com título e filtro</h5>
+                <lib-toggle formControlName="toggleFiltro" [enableTitle]="true" title="Habilitar filtro"></lib-toggle>
+                <div class="mt-2">Valor: {{ toggleFiltroControl.value }}</div>
+            </div>
+        </div>
+    </form>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><code>formControlName</code></td>
+                    <td><code>string</code></td>
+                    <td>-</td>
+                    <td>Permite integração com Reactive Forms.</td>
+                </tr>
+                <tr>
+                    <td><code>habilitarFiltro</code></td>
+                    <td><code>boolean</code></td>
+                    <td><code>false</code></td>
+                    <td>Exibe o título ao lado do toggle se for <code>true</code>.</td>
+                </tr>
+                <tr>
+                    <td><code>title</code></td>
+                    <td><code>string</code></td>
+                    <td><code>''</code></td>
+                    <td>Título exibido ao lado do toggle quando <code>habilitarFiltro</code> for <code>true</code>.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

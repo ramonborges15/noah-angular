@@ -1,0 +1,6 @@
+<div class="form-check form-switch centered-toggle">
+    <div>
+        <input class="form-check-input" type="checkbox" [checked]="value" (change)="toggle()" />
+    </div>
+    <span *ngIf="enableTitle">{{ title }}</span>
+</div>

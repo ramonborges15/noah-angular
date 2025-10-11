@@ -1,0 +1,79 @@
+<div class="container mt-4">
+    <h1>Checkbox Component</h1>
+    <section class="mb-5">
+        <p>O componente Checkbox é utilizado para criar caixas de seleção (checkboxes) ou botões de opção (radio
+            buttons) estilizados com Bootstrap e tipografia Poppins.</p>
+    </section>
+
+    <form [formGroup]="form">
+        <div class="mb-4">
+            <!-- Exemplo 1: Seleção múltipla -->
+            <div class="mb-3">
+                <h5>Seleção múltipla</h5>
+                <lib-checkbox [options]="multiOptions" [multiple]="true" [control]="multiControl"></lib-checkbox>
+                <small class="text-muted">Permite selecionar várias opções ao mesmo tempo.</small>
+                <div class="mt-2">Selecionado: {{ multiSelected | json }}</div>
+            </div>
+
+            <!-- Exemplo 2: Seleção única -->
+            <div class="mb-3">
+                <h5>Seleção única</h5>
+                <lib-checkbox [options]="singleOptions" [multiple]="false" [control]="singleControl"></lib-checkbox>
+                <small class="text-muted">Permite selecionar apenas uma opção (comportamento de radio button).</small>
+                <div class="mt-2">Selecionado: {{ singleSelected | json }}</div>
+            </div>
+
+            <!-- Exemplo 3: Desabilitado -->
+            <div class="mb-3">
+                <h5>Checkbox desabilitado</h5>
+                <lib-checkbox [options]="multiOptions" [multiple]="true"
+                    [control]="multiDisabledControl"></lib-checkbox>
+                <small class="text-muted">Todas as opções estão desabilitadas e não podem ser alteradas.</small>
+            </div>
+
+            <!-- Exemplo 4: Validação e mensagem de erro -->
+            <div class="mb-3">
+                <h5>Com validação obrigatória</h5>
+                <lib-checkbox [options]="multiOptions" [multiple]="true" [control]="multiControl"></lib-checkbox>
+                <small class="text-muted d-block">Este campo é obrigatório. Clique no botão para forçar a exibição do
+                    erro se nada estiver selecionado.</small>
+            </div>
+        </div>
+    </form>
+
+    <section class="mb-5">
+        <h2>Propriedades</h2>
+        <table class="table table-striped">
+            <tbody>
+                <tr>
+                    <td><code>options</code></td>
+                    <td><code>Array&lt;{{'{'}} label: string, value: any {{'}'}}&gt;</code></td>
+                    <td><code>[]</code></td>
+                    <td>Array de objetos que define as opções exibidas. Cada item deve ter um rótulo (label) e um valor
+                        (value).</td>
+                </tr>
+                <tr>
+                    <td><code>multiple</code></td>
+                    <td><code>boolean</code></td>
+                    <td><code>false</code></td>
+                    <td>Define se o componente permite múltipla seleção (<code>true</code>) ou apenas uma opção
+                        (<code>false</code>).</td>
+                </tr>
+                <tr>
+                    <td><code>control</code></td>
+                    <td><code>FormControl</code></td>
+                    <td>-</td>
+                    <td>FormControl do Reactive Forms utilizado para controlar o valor, estado de desabilitado e
+                        validação
+                        do componente.</td>
+                </tr>
+                <tr>
+                    <td><code>selectedChange</code></td>
+                    <td><code>EventEmitter&lt;any[] | any&gt;</code></td>
+                    <td>-</td>
+                    <td>Evento emitido sempre que o valor selecionado é alterado.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>

@@ -76,6 +76,32 @@ import { RouterLink } from '@angular/router';
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="material-icons me-2">check_box</i>
+                Checkbox
+              </h5>
+              <p class="card-text">Componente de checkbox customizado com integração ao Angular Forms e estilos Bootstrap.</p>
+              <a routerLink="/checkbox" class="btn btn-primary">Ver Documentação</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="material-icons me-2">toggle_on</i>
+                Toggle
+              </h5>
+              <p class="card-text">Componente de toggle (switch) estilizado, fácil de usar e integrado ao Angular Forms.</p>
+              <a routerLink="/toggle" class="btn btn-primary">Ver Documentação</a>
+            </div>
+          </div>
+        </div>
         
       </div>
 
