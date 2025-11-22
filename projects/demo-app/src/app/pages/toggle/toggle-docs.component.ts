@@ -1,7 +1,8 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
-import { ToggleComponent } from "../../../../../shared-components/src/lib/toggle/toggle.component";
+import { ToggleComponent } from "../../../../../shared-components/src/lib/components/toggle/toggle.component";
+
 
 @Component({
     selector: 'app-toggle-docs',

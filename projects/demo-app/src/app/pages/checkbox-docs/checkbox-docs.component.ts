@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { CheckboxComponent } from "../../../../../shared-components/src/lib/checkbox/checkbox.component";
+import { CheckboxComponent } from "../../../../../shared-components/src/lib/components/checkbox/checkbox.component";
 
 @Component({
     selector: 'app-checkbox-docs',

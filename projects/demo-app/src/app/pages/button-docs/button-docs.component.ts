@@ -1,7 +1,7 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
-import { ButtonComponent } from "../../../../../shared-components/src/lib/button/button.component";
+import { ButtonComponent } from "../../../../../shared-components/src/lib/components/button/button.component";
 
 @Component({
     selector: 'app-button-docs',

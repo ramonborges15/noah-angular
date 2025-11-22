@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { TableComponent } from '../../../../../shared-components/src/lib/table/table.component';
+import { Component } from '@angular/core';
+import { TableComponent } from '../../../../../shared-components/src/lib/components/table/table.component';
 
 @Component({
     selector: 'app-table-docs',

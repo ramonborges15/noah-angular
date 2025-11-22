@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { BreadcrumbComponent } from "../../../../../shared-components/src/lib/breadcrumb/breadcrumb.component";
+import { BreadcrumbComponent } from "../../../../../shared-components/src/lib/components/breadcrumb/breadcrumb.component";
 
 @Component({
     selector: 'app-breadcrumb-docs',
