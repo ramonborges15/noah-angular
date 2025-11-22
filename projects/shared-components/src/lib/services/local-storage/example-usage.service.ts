@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from './local-storage/local-storage.service';
-import { AuthStorageService } from './local-storage/auth-storage.service';
+import { LocalStorageService } from './local-storage.service';
+import { AuthStorageService } from './auth-storage.service';
 
 /**
  * Exemplo de uso dos services com todas as melhorias aplicadas
@@ -109,7 +109,7 @@ export class ExampleUsageService {
             console.log('Dados do usuário salvos para UI:', userDataSaved);
 
             // Verificar se token expira em breve (só para UX)
-            const isExpiringSoon = this.authStorage.isTokenExpiringSoon(10); // 10 minutos
+            const isExpiringSoon = await this.authStorage.isTokenExpiringSoon(10); // 10 minutos
             if (isExpiringSoon) {
                 console.log('Token expirando em breve - backend fará refresh automático!');
                 // Não fazemos refresh no frontend - backend cuida disso
@@ -374,8 +374,8 @@ export class ExampleUsageService {
      * Exemplo de verificação periódica de expiração do token (só UX)
      */
     startTokenExpirationCheck(): void {
-        setInterval(() => {
-            const isExpiringSoon = this.authStorage.isTokenExpiringSoon(5);
+        setInterval(async () => {
+            const isExpiringSoon = await this.authStorage.isTokenExpiringSoon(5);
 
             if (isExpiringSoon) {
                 console.warn('⚠️ Token expirando em breve');

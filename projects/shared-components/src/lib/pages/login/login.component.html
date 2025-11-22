@@ -1,0 +1,119 @@
+<!-- Container principal do login -->
+<div class="login-container" [ngClass]="customCssClass"
+    [style.background-image]="options.backgroundUrl ? 'url(' + options.backgroundUrl + ')' : null">
+
+    <!-- Card de login -->
+    <div class="login-card">
+
+        <!-- Header -->
+        <div class="login-header">
+            <img *ngIf="options.logoUrl" [src]="options.logoUrl" alt="Logo" class="login-logo">
+
+            <h1 class="login-title">{{ options.title || 'Entrar' }}</h1>
+            <p class="login-subtitle">{{ options.subtitle || 'Acesse sua conta' }}</p>
+        </div>
+
+        <!-- Indicador de loading -->
+        <div *ngIf="isLoading$ | async" class="loading-overlay">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Entrando...</span>
+        </div>
+
+        <!-- Estado de bloqueio removido conforme solicitação -->
+
+        <!-- Formulário de login -->
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form"
+            [class.disabled]="(isLoading$ | async)">
+
+            <!-- Campo Email -->
+            <div class="form-group">
+                <label for="email" class="form-label">
+                    Email <span class="required">*</span>
+                </label>
+
+                <div class="input-wrapper">
+                    <input id="email" type="email" formControlName="email" class="form-input"
+                        [class.error]="hasFieldError('email', 'required') || hasFieldError('email', 'email')"
+                        placeholder="Digite seu email" autocomplete="email" autocapitalize="off">
+
+                    <i class="input-icon icon-email"></i>
+                </div>
+
+                <!-- Erro do campo email -->
+                <div *ngIf="getFieldErrorMessage('email')" class="field-error">
+                    {{ getFieldErrorMessage('email') }}
+                </div>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="form-group">
+                <label for="password" class="form-label">
+                    Senha <span class="required">*</span>
+                </label>
+
+                <div class="input-wrapper">
+                    <input id="password" [type]="showPassword ? 'text' : 'password'" formControlName="password"
+                        class="form-input"
+                        [class.error]="hasFieldError('password', 'required') || hasFieldError('password', 'minlength')"
+                        placeholder="Digite sua senha" autocomplete="current-password">
+
+                    <button type="button" class="password-toggle" (click)="togglePasswordVisibility()"
+                        [attr.aria-label]="showPassword ? 'Ocultar senha' : 'Mostrar senha'">
+                        <i [class]="showPassword ? 'icon-eye-off' : 'icon-eye'"></i>
+                    </button>
+                </div>
+
+                <!-- Erro do campo senha -->
+                <div *ngIf="getFieldErrorMessage('password')" class="field-error">
+                    {{ getFieldErrorMessage('password') }}
+                </div>
+            </div>
+
+            <!-- Checkbox removido conforme solicitação -->
+
+            <!-- Erros gerais -->
+            <div *ngIf="(errors$ | async)?.general" class="alert alert-error">
+                <i class="icon-error"></i>
+                <div>
+                    <div *ngFor="let error of (errors$ | async)?.general">
+                        {{ error }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão de submit -->
+            <button type="submit" class="login-button" [disabled]="loginForm.invalid || (isLoading$ | async)">
+
+                <span *ngIf="!(isLoading$ | async)">Entrar</span>
+                <span *ngIf="isLoading$ | async" class="loading-content">
+                    <i class="icon-spinner spin"></i>
+                    Entrando...
+                </span>
+            </button>
+
+            <!-- Contador de tentativas removido conforme solicitação -->
+        </form>
+
+        <!-- Links adicionais -->
+        <div class="login-links">
+            <a href="#" (click)="onForgotPassword(); $event.preventDefault()" class="link">
+                Esqueci minha senha
+            </a>
+
+            <span class="separator">•</span>
+
+            <a href="#" (click)="onCreateAccount(); $event.preventDefault()" class="link">
+                Criar conta
+            </a>
+        </div>
+
+        <!-- Seção de demonstração removida conforme solicitação -->
+
+        <!-- Footer -->
+        <div *ngIf="options.footerText" class="login-footer">
+            <p class="footer-text">
+                {{ options.footerText }}
+            </p>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { TableDocsComponent } from './pages/table-docs/table-docs.component';
 import { BreadcrumbDocsComponent } from './pages/breadcrumb-docs/breadcrumb-docs.component';
 import { CheckboxDocsComponent } from './pages/checkbox-docs/checkbox-docs.component';
 import { ToggleDocsComponent } from './pages/toggle/toggle-docs.component';
+import { LoginExampleComponent } from './pages/login-example/login-example.component';
 
 export const routes: Routes = [
     {
@@ -22,7 +23,8 @@ export const routes: Routes = [
             { path: 'button', component: ButtonDocsComponent },
             { path: 'breadcrumb', component: BreadcrumbDocsComponent },
             { path: 'checkbox', component: CheckboxDocsComponent },
-            { path: 'toggle', component: ToggleDocsComponent }
+            { path: 'toggle', component: ToggleDocsComponent },
+            { path: 'login', component: LoginExampleComponent }
         ]
     }
 ];

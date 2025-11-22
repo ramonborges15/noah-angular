@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AuthStorageService } from './local-storage/auth-storage.service';
+import { AuthStorageService } from './auth-storage.service';
 
 /**
  * Exemplo de uso dos services simplificados alinhados com backend
@@ -57,9 +57,9 @@ export class ExampleUsageSimplifiedService {
     /**
      * 3. Verificação de expiração para UX
      */
-    checkTokenExpiration() {
+    async checkTokenExpiration() {
         // Verifica se está próximo de expirar para mostrar aviso na UI
-        if (this.authStorage.isTokenExpiringSoon(10)) { // 10 minutos
+        if (await this.authStorage.isTokenExpiringSoon(10)) { // 10 minutos
             console.log('⚠️ Token expira em breve - mostrar aviso na UI');
             // Mostrar modal ou toast para o usuário
         }

@@ -99,6 +99,20 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
               Toggle
             </a>
           </li>
+          
+          <li class="nav-item mb-4 mt-4">
+            <h6 class="text-uppercase small mb-2">Páginas</h6>
+          </li>
+          
+          <li class="nav-item mb-2">
+            <a routerLink="/login"
+               routerLinkActive="active"
+               class="nav-link text-white"
+               (click)="closeSidebarOnMobile()">
+              <i class="material-icons me-2" style="vertical-align: bottom;">login</i>
+              Login
+            </a>
+          </li>
         </ul>
       </nav>
 
