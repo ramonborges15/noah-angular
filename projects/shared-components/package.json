@@ -2,7 +2,12 @@
   "name": "@ramonbsales/noah-angular",
   "version": "1.0.0",
   "description": "Noah Angular - shared UI components",
-  "keywords": ["angular", "components", "noah", "ui"],
+  "keywords": [
+    "angular",
+    "components",
+    "noah",
+    "ui"
+  ],
   "author": "Ramon Sales <ramonbsales@gmail.com>",
   "license": "MIT",
   "repository": {
