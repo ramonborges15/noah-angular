@@ -194,8 +194,10 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
         transform: translateX(0);
       }
       
+      /* On desktop the sidebar occupies space on the left; shift the main content accordingly */
       .main-content {
-        margin-left: 0;
+        margin-left: 280px; /* match .sidebar width */
+        transition: margin-left 0.3s ease;
       }
       
       .sidebar-overlay {

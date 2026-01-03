@@ -448,3 +448,25 @@ export class AuthPageComponent {
 * **Acessibilidade (a11y):** Certifique-se de que seus componentes de UI sejam acessíveis (usando ARIA, foco, etc.).
 
 Ao seguir essas diretrizes, você estará bem no caminho para criar uma biblioteca Angular reutilizável e robusta, que economizará muito tempo e esforço em seus futuros projetos!
+
+## Desenvolvimento rápido (fluxo recomendado)
+
+Se você estiver desenvolvendo a biblioteca `shared-components` junto com o `demo-app`, use dois terminais separados para um fluxo simples e confiável:
+
+- Terminal 1 (recompila a library automaticamente):
+
+```bash
+npx ng build shared-components --watch --configuration=development
+```
+
+- Terminal 2 (serve o app de demonstração):
+
+```bash
+ng serve demo-app
+# ou
+npm start
+```
+
+Salve arquivos em `projects/shared-components/src` e o build em watch atualizará `dist/shared-components`. O `demo-app` está configurado para resolver a library a partir de `dist/shared-components`, então ao salvar e compilar a library as mudanças aparecem automaticamente no app servido.
+
+Dica: abra o DevTools do navegador com "Disable cache" habilitado enquanto desenvolve para evitar problemas de cache.

@@ -14,6 +14,9 @@ export * from './lib/components/toggle/toggle.component';
 export * from './lib/components/breadcrumb/breadcrumb.component';
 export * from './lib/components/table/table.component';
 
+// Layout Components  
+export * from './lib/sidebar/sidebar.component';
+
 // Pages
 export * from './lib/pages/login/login.component';
 
@@ -26,3 +29,4 @@ export * from './lib/interceptors';
 
 // Types
 export * from './lib/types/auth.types';
+export * from './lib/types/sidebar.types';

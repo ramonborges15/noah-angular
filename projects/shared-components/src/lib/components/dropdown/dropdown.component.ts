@@ -6,7 +6,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@a
   selector: 'lib-dropdown',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './dropdown.component.html',
-  styleUrl: './dropdown.component.scss',
+  styleUrls: ['./dropdown.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

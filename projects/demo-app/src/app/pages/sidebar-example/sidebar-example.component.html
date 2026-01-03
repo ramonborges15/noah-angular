@@ -1,0 +1,80 @@
+<!-- Layout com sidebar ocupando toda a tela -->
+<div class="sidebar-layout">
+  <!-- Sidebar Component -->
+  <lib-sidebar
+    [config]="sidebarConfig"
+    [menuItems]="menuItems"
+    [isCollapsed]="isSidebarCollapsed"
+    (itemClick)="onItemClick($event)"
+    (toggle)="onSidebarToggle($event)"
+    (logoClick)="onLogoClick()">
+  </lib-sidebar>
+
+  <!-- Content Area -->
+  <main class="main-content" [class.collapsed]="isSidebarCollapsed">
+    <div class="content-wrapper">
+      <header class="page-header">
+        <h1>Exemplo de Sidebar</h1>
+        <p class="page-description">
+          Esta é uma demonstração do componente Sidebar em layout de página completa.
+          O sidebar é totalmente agnostico e configurável.
+        </p>
+      </header>
+
+      <!-- Router Outlet para navegação entre páginas -->
+      <div class="content-body">
+        <router-outlet></router-outlet>
+      </div>
+
+      <!-- Conteúdo de exemplo quando não há rota específica -->
+      <div class="demo-content">
+        <div class="feature-grid">
+          <div class="feature-card">
+            <i class="fa fa-cogs"></i>
+            <h3>Totalmente Configurável</h3>
+            <p>Configure largura, tema, logo, auto-collapse e muito mais através do objeto de configuração.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa fa-sitemap"></i>
+            <h3>Navegação Hierárquica</h3>
+            <p>Suporte a dois níveis de navegação com submenus expansíveis e badge de notificação.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa fa-mobile-alt"></i>
+            <h3>Responsivo</h3>
+            <p>Adaptação automática para dispositivos móveis com overlay e botão toggle dedicado.</p>
+          </div>
+
+          <div class="feature-card">
+            <i class="fa fa-palette"></i>
+            <h3>Design System</h3>
+            <p>Utiliza as variáveis do sistema de design para manter consistência visual.</p>
+          </div>
+        </div>
+
+        <div class="action-examples">
+          <h2>Exemplos de Interação</h2>
+          <div class="action-buttons">
+            <button 
+              class="btn btn-primary" 
+              (click)="isSidebarCollapsed = !isSidebarCollapsed">
+              {{isSidebarCollapsed ? 'Expandir' : 'Colapsar'}} Sidebar
+            </button>
+            <button 
+              class="btn btn-secondary" 
+              (click)="onLogoClick()">
+              Clique no Logo
+            </button>
+          </div>
+        </div>
+
+        <div class="config-display">
+          <h3>Configuração Atual</h3>
+          <pre>{{sidebarConfig | json}}</pre>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

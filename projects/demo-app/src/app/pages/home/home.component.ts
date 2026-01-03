@@ -102,6 +102,19 @@ import { RouterLink } from '@angular/router';
             </div>
           </div>
         </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card h-100 border-warning">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="material-icons me-2">menu</i>
+                Sidebar Layout
+              </h5>
+              <p class="card-text">Demonstração completa do componente Sidebar em layout de página inteira com navegação hierárquica.</p>
+              <a routerLink="/sidebar-example" class="btn btn-warning">Ver Demo Completo</a>
+            </div>
+          </div>
+        </div>
         
       </div>
 

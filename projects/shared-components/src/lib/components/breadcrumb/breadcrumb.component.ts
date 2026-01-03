@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
   selector: 'lib-breadcrumb',
   imports: [RouterModule, CommonModule],
   templateUrl: './breadcrumb.component.html',
-  styleUrl: './breadcrumb.component.scss'
+  styleUrls: ['./breadcrumb.component.scss']
 })
 export class BreadcrumbComponent {
 

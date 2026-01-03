@@ -48,6 +48,27 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ng test
 ```
 
+## Desenvolvimento rápido (fluxo recomendado)
+
+Durante o desenvolvimento da biblioteca junto com o `demo-app`, é confortável rodar dois terminais separados:
+
+- Terminal 1: compila a biblioteca em modo watch
+
+```bash
+npx ng build shared-components --watch --configuration=development
+```
+
+- Terminal 2: inicia o servidor do demo app
+
+```bash
+ng serve demo-app
+# ou
+npm start
+```
+
+Salve arquivos em `projects/shared-components/src`; o processo em watch atualizará `dist/shared-components` automaticamente. O `demo-app` está configurado para resolver essa pasta, então as alterações compiladas aparecem no app servido.
+
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

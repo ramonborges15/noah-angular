@@ -1,0 +1,110 @@
+<!-- Overlay para mobile -->
+<div *ngIf="currentState.isMobile && currentState.isOverlayOpen" class="sidebar-overlay" (click)="closeOverlay()">
+</div>
+
+<!-- Sidebar principal -->
+<aside class="sidebar" [class.collapsed]="currentState.isCollapsed" [class.mobile]="currentState.isMobile"
+  [class.overlay-open]="currentState.isOverlayOpen" [class.theme-light]="finalConfig.theme === 'light'"
+  [class.theme-dark]="finalConfig.theme === 'dark'" [class.position-left]="finalConfig.position === 'left'"
+  [class.position-right]="finalConfig.position === 'right'" [ngClass]="finalConfig.customCssClass"
+  [style.width]="sidebarWidth">
+
+  <!-- Header com logo -->
+  <div class="sidebar-header" *ngIf="finalConfig.logo.src">
+    <button class="logo-container" (click)="onLogoClick()" [attr.aria-label]="finalConfig.logo.alt">
+      <img [src]="finalConfig.logo.src" [alt]="finalConfig.logo.alt" class="logo-image">
+
+      <span class="logo-text" *ngIf="!currentState.isCollapsed">
+        {{ finalConfig.logo.alt }}
+      </span>
+    </button>
+
+    <!-- Botão de toggle (se habilitado) -->
+    <button *ngIf="finalConfig.collapsible && !currentState.isMobile" class="toggle-btn" (click)="toggleSidebar()"
+      [attr.aria-label]="currentState.isCollapsed ? 'Expandir menu' : 'Recolher menu'">
+      <i class="toggle-icon fa" [class.fa-angle-left]="!currentState.isCollapsed"
+        [class.fa-angle-right]="currentState.isCollapsed">
+      </i>
+    </button>
+  </div>
+
+  <!-- Navegação principal -->
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <ng-container *ngFor="let item of menuItems; trackBy: trackByItemId">
+
+        <!-- Divisor -->
+        <li *ngIf="item.divider" class="nav-divider" role="separator"></li>
+
+        <!-- Item do menu -->
+        <li class="nav-item" [class.active]="isItemActive(item)"
+          [class.has-children]="item.children && item.children.length > 0" [class.expanded]="item.isExpanded"
+          [class.disabled]="item.disabled" [class.has-active-child]="hasActiveChild(item)">
+
+          <a class="nav-link" [routerLink]="item.route" [class.no-route]="!item.route"
+            (click)="onItemClick(item, $event)" [attr.aria-label]="item.label"
+            [attr.aria-expanded]="item.children ? item.isExpanded : null" [attr.tabindex]="item.disabled ? -1 : 0">
+
+            <!-- Ícone -->
+            <i class="nav-icon" [ngClass]="item.icon" [attr.aria-hidden]="true">
+            </i>
+
+            <!-- Label -->
+            <span class="nav-label" *ngIf="!currentState.isCollapsed">
+              {{ item.label }}
+            </span>
+
+            <!-- Badge -->
+            <span class="nav-badge" *ngIf="item.badge && !currentState.isCollapsed">
+              {{ item.badge }}
+            </span>
+
+            <!-- Seta para submenu -->
+            <i class="nav-arrow fa" *ngIf="item.children && item.children.length > 0 && !currentState.isCollapsed"
+              [class.fa-chevron-down]="item.isExpanded" [class.fa-chevron-right]="!item.isExpanded"
+              [attr.aria-hidden]="true">
+            </i>
+          </a>
+
+          <!-- Submenu -->
+          <ul class="nav-submenu"
+            *ngIf="item.children && item.children.length > 0 && item.isExpanded && !currentState.isCollapsed">
+            <li class="nav-subitem" *ngFor="let subItem of item.children; trackBy: trackByItemId"
+              [class.active]="isItemActive(subItem)" [class.disabled]="subItem.disabled">
+
+              <a class="nav-sublink" [routerLink]="subItem.route" [class.no-route]="!subItem.route"
+                (click)="onItemClick(subItem, $event)" [attr.aria-label]="subItem.label"
+                [attr.tabindex]="subItem.disabled ? -1 : 0">
+
+                <!-- Ícone do subitem -->
+                <i class="nav-subicon" [ngClass]="subItem.icon" [attr.aria-hidden]="true">
+                </i>
+
+                <!-- Label do subitem -->
+                <span class="nav-sublabel">
+                  {{ subItem.label }}
+                </span>
+
+                <!-- Badge do subitem -->
+                <span class="nav-subbadge" *ngIf="subItem.badge">
+                  {{ subItem.badge }}
+                </span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ng-container>
+    </ul>
+  </nav>
+
+  <!-- Footer opcional -->
+  <div class="sidebar-footer" *ngIf="!currentState.isCollapsed">
+    <ng-content select="[slot=footer]"></ng-content>
+  </div>
+</aside>
+
+<!-- Botão mobile para abrir sidebar -->
+<button *ngIf="currentState.isMobile && !currentState.isOverlayOpen" class="mobile-toggle-btn" (click)="toggleOverlay()"
+  [attr.aria-label]="'Abrir menu'">
+  <i class="fa fa-bars" [attr.aria-hidden]="true"></i>
+</button>

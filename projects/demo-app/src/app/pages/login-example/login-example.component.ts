@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent, LoginService } from 'shared-components';
+import { LoginComponent } from 'shared-components';
 
 @Component({
-    selector: 'app-login-example',
-    standalone: true,
-    imports: [CommonModule, LoginComponent],
-    template: `
+  selector: 'app-login-example',
+  standalone: true,
+  imports: [CommonModule, LoginComponent],
+  template: `
     <div class="container-fluid p-4">
       <div class="row">
         <div class="col-12">
@@ -134,7 +134,7 @@ import { LoginComponent, LoginService } from 'shared-components';
       </div>
     </div>
   `,
-    styles: [`
+  styles: [`
     .container-fluid {
       max-width: 1200px;
     }
@@ -162,25 +162,25 @@ import { LoginComponent, LoginService } from 'shared-components';
   `]
 })
 export class LoginExampleComponent {
-    loginResult: any = null;
+  loginResult: any = null;
 
-    onLoginSuccess(result: any) {
-        console.log('Login successful:', result);
-        this.loginResult = {
-            type: 'success',
-            message: 'Login realizado com sucesso!',
-            data: result,
-            timestamp: new Date()
-        };
-    }
+  onLoginSuccess(result: any) {
+    console.log('Login successful:', result);
+    this.loginResult = {
+      type: 'success',
+      message: 'Login realizado com sucesso!',
+      data: result,
+      timestamp: new Date()
+    };
+  }
 
-    onLoginError(error: any) {
-        console.error('Login error:', error);
-        this.loginResult = {
-            type: 'error',
-            message: 'Erro no login',
-            error: error,
-            timestamp: new Date()
-        };
-    }
+  onLoginError(error: any) {
+    console.error('Login error:', error);
+    this.loginResult = {
+      type: 'error',
+      message: 'Erro no login',
+      error: error,
+      timestamp: new Date()
+    };
+  }
 }

@@ -20,7 +20,7 @@ export interface TableColumn {
   selector: 'lib-table',
   imports: [CommonModule, DropdownComponent],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.scss'
+  styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
 

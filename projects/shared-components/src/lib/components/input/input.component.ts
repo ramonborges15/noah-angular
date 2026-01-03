@@ -8,7 +8,7 @@ export type InputType = 'text' | 'number' | 'date' | 'email' | 'password';
   selector: 'lib-input',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './input.component.html',
-  styleUrl: './input.component.scss',
+  styleUrls: ['./input.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
