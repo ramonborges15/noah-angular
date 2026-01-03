@@ -24,7 +24,7 @@ jobs:
         run: npm ci
 
       - name: Build library
-        run: ng build shared-components --configuration=production
+        run: npx ng build shared-components --configuration=production
 
       - name: Publish to npm
         env:
