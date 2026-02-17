@@ -1,12 +1,34 @@
 {
-  "name": "shared-components",
-  "version": "0.0.1",
+  "name": "@ramonbsales/noah-angular",
+  "version": "1.0.0",
+  "description": "Noah Angular - shared UI components",
+  "keywords": [
+    "angular",
+    "components",
+    "noah",
+    "ui"
+  ],
+  "author": "Ramon Sales <ramonbsales@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ramonborges15/noah-angular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ramonborges15/noah-angular/issues"
+  },
+  "homepage": "https://github.com/ramonborges15/noah-angular#readme",
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0"
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "rxjs": "^7.8.0",
+    "tslib": "^2.3.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  }
 }
