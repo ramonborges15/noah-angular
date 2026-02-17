@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/ramonborges15/noah-angular#readme",
   "peerDependencies": {
-    "@angular/common": "^19.2.0",
-    "@angular/core": "^19.2.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
     "rxjs": "^7.8.0",
     "tslib": "^2.3.0"
   },
