@@ -2,6 +2,11 @@
 
 All notable changes for @ramonbsales/noah-angular
 
+## [1.1.5] - 2026-02-18
+- fix: change storage from sessionStorage to localStorage in AuthStorageService
+
+---
+
 ## [1.1.3] - 2026-02-18
 - Fix: store user data in localStorage for read/clear consistency
 

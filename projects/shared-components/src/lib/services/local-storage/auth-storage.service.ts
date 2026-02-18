@@ -45,7 +45,7 @@ export class AuthStorageService {
         const success = await this.storage.setItem(
             this.TOKEN_KEY,
             item,
-            'sessionStorage',
+            'localStorage',
             { encrypt: true }
         );
 
@@ -63,7 +63,7 @@ export class AuthStorageService {
             // 🔓 SEMPRE descriptografar tokens
             const item = await this.storage.getItem<{ value: string, expiry: number }>(
                 this.TOKEN_KEY,
-                'sessionStorage',
+                'localStorage',
                 { encrypt: true }
             );
 
@@ -76,7 +76,7 @@ export class AuthStorageService {
             const now = Date.now();
             if (item.expiry && now > item.expiry) {
                 // Token expirado - remover
-                this.storage.removeItem(this.TOKEN_KEY, 'sessionStorage');
+                this.storage.removeItem(this.TOKEN_KEY, 'localStorage');
                 this.isAuthenticated$.next(false);
                 return null;
             }
