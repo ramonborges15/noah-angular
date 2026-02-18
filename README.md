@@ -1,5 +1,7 @@
 # NoahAngular
 
+[![Publish status](https://github.com/ramonborges15/noah-angular/actions/workflows/publish.yml/badge.svg)](https://github.com/ramonborges15/noah-angular/actions) [![npm version](https://img.shields.io/npm/v/@ramonbsales/noah-angular.svg)](https://www.npmjs.com/package/@ramonbsales/noah-angular)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
 
 É uma excelente ideia criar um projeto Angular reutilizável para componentes de UI, gestão de cookies e uma tela de login! Usar componentes *standalone* é a abordagem moderna e simplificada, perfeita para bibliotecas reutilizáveis.
@@ -470,3 +472,75 @@ npm start
 Salve arquivos em `projects/shared-components/src` e o build em watch atualizará `dist/shared-components`. O `demo-app` está configurado para resolver a library a partir de `dist/shared-components`, então ao salvar e compilar a library as mudanças aparecem automaticamente no app servido.
 
 Dica: abra o DevTools do navegador com "Disable cache" habilitado enquanto desenvolve para evitar problemas de cache.
+
+## Publicar a Biblioteca no NPM
+
+### Pré-requisitos
+
+1. **Conta npm:** Crie uma conta gratuita em [https://www.npmjs.com/](https://www.npmjs.com/)
+2. **Token de automação:** Gere um token em sua conta npm para usar no GitHub Actions
+
+### Configuração do GitHub
+
+1. **Gerar token no npm:**
+   - Acesse https://www.npmjs.com/settings/seu-usuario/tokens
+   - Clique em "Generate New Token" → selecione **Automation**
+   - Copie o token gerado
+
+2. **Adicionar secret no GitHub:**
+   - Vá para seu repositório → Settings → Secrets and variables → Actions
+   - Clique em "New repository secret"
+   - Nome: `NPM_TOKEN`
+   - Valor: cole o token do npm
+
+### Fluxo de Publicação
+
+O projeto já possui um GitHub Action configurado que publica automaticamente quando uma tag é criada.
+
+**Para publicar uma nova versão:**
+
+```bash
+# 1. Atualizar a versão no package.json (semântico)
+#    Edite projects/shared-components/package.json e altere "version": "X.Y.Z"
+
+# 2. Commit das alterações
+git add projects/shared-components/package.json
+git commit -m "chore: bump version to X.Y.Z"
+
+# 3. Criar e enviar tag (dispara o GitHub Action automaticamente)
+git tag vX.Y.Z
+git push && git push --tags
+```
+
+Exemplo:
+```bash
+# Saindo de v1.0.0 para v1.1.0
+git add projects/shared-components/package.json
+git commit -m "chore: bump version to 1.1.0"
+git tag v1.1.0
+git push && git push --tags
+```
+
+**Acompanhar a publicação:**
+- Acesse https://github.com/ramonborges15/noah-angular/actions
+- O workflow "Publish shared-components to npm" será executado
+- Quando completar, o package estará disponível em https://www.npmjs.com/package/@ramonbsales/noah-angular
+
+### Instalação em outros projetos
+
+```bash
+npm install @ramonbsales/noah-angular
+```
+
+Em seu componente Angular:
+```typescript
+import { MyComponent } from '@ramonbsales/noah-angular';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [MyComponent],
+  template: `<lib-my-component></lib-my-component>`
+})
+export class AppComponent {}
+```

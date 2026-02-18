@@ -143,15 +143,13 @@ export class LoginService {
     try {
       let response: LoginResponse;
 
-      // if (this.authProvider) {
-      //   // Usa provider customizado da aplicação
-      //   response = await this.authProvider.login(credentials);
-      // } else {
-      //   // Simula resposta (para desenvolvimento/demo)
-      //   response = await this.simulateLogin(credentials);
-      // }
-
-      response = await this.simulateLogin(credentials);
+      if (this.authProvider) {
+        // Usa provider customizado da aplicação
+        response = await this.authProvider.login(credentials);
+      } else {
+        // Simula resposta (para desenvolvimento/demo)
+        response = await this.simulateLogin(credentials);
+      }
 
       if (response.success && response.accessToken && response.user) {
         // Login bem-sucedido
