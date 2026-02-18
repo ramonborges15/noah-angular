@@ -1,9 +1,5 @@
 ---
 name: publish-npm
-description: Describe what this skill does and when to use it. Include keywords that help agents identify relevant tasks.
----
----
-name: publish-npm
 description: Publish the `shared-components` Angular library (@ramonbsales/noah-angular) to npm using GitHub Actions with semantic versioning. Includes prerequisites, step-by-step release process, example commands, and helpful recommendations.
 ---
 

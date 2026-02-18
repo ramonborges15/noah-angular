@@ -114,7 +114,7 @@ export class AuthStorageService {
         return await this.storage.setItem(
             this.USER_DATA_KEY,
             userData,
-            'sessionStorage',
+            'localStorage',
             { encrypt: true }
         );
     }
@@ -127,7 +127,7 @@ export class AuthStorageService {
             // 🔓 SEMPRE descriptografar dados do usuário
             return await this.storage.getItem<T>(
                 this.USER_DATA_KEY,
-                'sessionStorage',
+                'localStorage',
                 { encrypt: true }
             );
         } catch (error) {
@@ -156,7 +156,10 @@ export class AuthStorageService {
      */
     clearAuthData(): void {
         this.storage.removeItem(this.TOKEN_KEY, 'sessionStorage');
+        this.storage.removeItem(this.TOKEN_KEY, 'localStorage');
         this.storage.removeItem(this.USER_DATA_KEY, 'sessionStorage');
+        this.storage.removeItem(this.USER_DATA_KEY, 'localStorage');
+
         this.isAuthenticated$.next(false);
     }
 
