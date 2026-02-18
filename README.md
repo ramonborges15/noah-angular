@@ -1,5 +1,7 @@
 # NoahAngular
 
+[![Publish status](https://github.com/ramonborges15/noah-angular/actions/workflows/publish.yml/badge.svg)](https://github.com/ramonborges15/noah-angular/actions) [![npm version](https://img.shields.io/npm/v/@ramonbsales/noah-angular.svg)](https://www.npmjs.com/package/@ramonbsales/noah-angular)
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
 
 É uma excelente ideia criar um projeto Angular reutilizável para componentes de UI, gestão de cookies e uma tela de login! Usar componentes *standalone* é a abordagem moderna e simplificada, perfeita para bibliotecas reutilizáveis.
