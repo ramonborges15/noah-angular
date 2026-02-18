@@ -2,9 +2,13 @@
 
 All notable changes for @ramonbsales/noah-angular
 
+## [1.1.3] - 2026-02-18
+- Fix: store user data in localStorage for read/clear consistency
+
+---
+
 ## [1.1.2] - 2026-02-18
 - Patch release: bug fixes and minor improvements
-- Fix: store user data in localStorage for read/clear consistency
 
 ---
 
