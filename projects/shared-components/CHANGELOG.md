@@ -2,6 +2,11 @@
 
 All notable changes for @ramonbsales/noah-angular
 
+## [1.1.2] - 2026-02-18
+- Patch release: bug fixes and minor improvements
+
+---
+
 ## [1.0.0] - 2026-01-03
 - Initial public release
 - Updated package metadata (name, version, author, license)

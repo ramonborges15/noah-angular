@@ -29,7 +29,6 @@ export class MyComponent {
   loginOptions = {
     title: 'Minha Aplicação',
     subtitle: 'Entre na sua conta',
-    showRememberMe: true,
     showForgotPassword: true,
     showRegisterLink: true
   };
@@ -113,11 +112,9 @@ interface LoginOptions {
   backgroundUrl?: string;
 
   // Funcionalidades
-  showRememberMe?: boolean;
   showForgotPassword?: boolean;
   showRegisterLink?: boolean;
   showPasswordStrength?: boolean;
-  showDemoUsers?: boolean;
 
   // Segurança
   maxLoginAttempts?: number;
@@ -280,7 +277,6 @@ import { LoginComponent, LoginResponse } from 'shared-components';
           title: 'Sistema Acadêmico',
           subtitle: 'Acesse sua conta institucional',
           logoUrl: '/assets/logo.png',
-          showRememberMe: true,
           showForgotPassword: true,
           maxLoginAttempts: 3,
           lockoutDuration: 300000,

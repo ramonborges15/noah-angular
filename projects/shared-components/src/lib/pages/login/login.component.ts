@@ -107,8 +107,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         Validators.required,
         Validators.minLength(3),
         Validators.maxLength(100)
-      ]],
-      rememberMe: [false]
+      ]]
     });
   }
 
